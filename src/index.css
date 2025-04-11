@@ -1,0 +1,28 @@
+
+body {
+  max-width: 1600px;
+	display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  font-family: sans-serif;
+
+  background: linear-gradient(0deg, hwb(61 0% 0% / 0.363), #0073ff7c);
+  background-attachment: fixed;
+}
+
+button {
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-weight: 500;
+  cursor: pointer;
+  border-color: #0b1550;
+  transition: border-color 0.5s;
+  transition: color 0.5s;
+	transition: background-color 0.5s ;
+}
+button:hover {
+  border-color: #0059ff;
+}
+

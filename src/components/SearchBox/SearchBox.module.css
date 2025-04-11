@@ -1,0 +1,30 @@
+.search {
+	display: flex; 
+	justify-content: space-between;
+	align-items: center;
+	gap: 4px;
+	max-width: 400px;
+	padding: 12px;
+	border-radius:  6px;
+	background: #cce6f3b2; 
+	border: solid black 1px;
+	height: 60px;
+	width: 400px;
+}
+
+  .label {
+	font-weight: bold;
+	color: rgb(67, 49, 83);
+  }
+
+  .btn{
+	display: flex;
+	color:rgb(81, 24, 134);
+	height: 28px;
+	align-items: center;
+	background-color: rgb(178, 207, 235);
+	transition: color 0.5s;
+  }
+  .btn:hover{
+	color:rgb(255, 255, 255);
+	background-color: rgb(73, 90, 161);}

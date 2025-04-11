@@ -1,0 +1,40 @@
+ .contact {
+	background-color: #e2f0f748; 
+	border: solid black 1px;
+	border-radius: 8px;
+	display: flex;
+	height: 80px;
+	width: 400px;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	padding: 10px;
+  }
+
+  .contcont{
+	display: flex;
+	flex-direction: column;
+	gap:4px;
+  }
+   
+  .info {
+	font-size: 18px;
+	margin: 2px;
+  }
+  
+  .icon {
+	size: 22px;
+	color: rgba(2, 94, 94, 0.719);
+  } 
+  .del{
+	 display: flex;
+	flex-direction: column-reverse; 
+	background-color: #a3c5e0;
+	transition: color 0.5s;
+	transition: background-color rgb(162, 172, 212) ;
+
+  }
+  .del:hover{
+   color: #ffffff;
+   background-color: #6c9fc9;;
+ }
