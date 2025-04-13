@@ -8,12 +8,12 @@ import RestrictedRoute from "../RestrictedRoute";
 import PrivateRoute from "../PrivateRoute";
 import css from './App.module.css'
 
-const HomePage = lazy(() => import("../Pages/HomePage"));
+const HomePage = lazy(() => import("../pages/HomePage"));
 const RegistrationPage = lazy(() =>
-  import("../Pages/RegistrationPage")
+  import("../pages/RegistrationPage")
 );
-const LoginPage = lazy(() => import("../Pages/LoginPage"));
-const ContactsPage = lazy(() => import("../Pages/ContactsPage"));
+const LoginPage = lazy(() => import("../pages/LoginPage"));
+const ContactsPage = lazy(() => import("../pages/ContactsPage"));
 
 export default function App() {
   const dispatch = useDispatch();
