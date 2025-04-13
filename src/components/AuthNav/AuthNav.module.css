@@ -1,0 +1,20 @@
+.link {
+  text-decoration: none;
+      padding: 6px;
+      text-align: center;
+      font-size: 22px;
+      color: #01274b;
+      background-color: #01274b34;
+      border-radius: 8px;
+      margin: 5px;
+      border: 1px solid #333333;
+      transition: color 400ms;  
+    }
+    
+    .link:hover {
+      color: #0804d3;
+      background-color: #8ea1b44f;
+      border-color: #0026ff;
+    }
+    
+

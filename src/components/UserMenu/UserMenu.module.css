@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  
+}
+
+.username {
+  margin: 0;
+  text-align: center;
+  background:#0099ff5e;
+  box-shadow: 0 0 30px 2px#0099ffbe;
+  font-size: 22px;
+  color: #1a293d;
+}
+.buttonlogout {
+      text-decoration: none;
+      gap: 500px;
+      text-align: center;
+      font-size: 22px;
+      color: #01274b;
+      background-color: #01274b34;
+      border-radius: 8px;
+      border: 1px solid #333333;
+      margin: 0 5px 0 0;
+    }
+    
+    .buttonlogout:hover {
+      color: #635e5e;
+      background-color: #cfdae64f;
+      border-color: #01274b;
+    }

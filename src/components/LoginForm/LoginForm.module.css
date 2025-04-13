@@ -1,0 +1,59 @@
+.wrapper {
+  width: 620px;
+  background-color: #e6f6f81f;
+  border: 2px solid rgb(54, 84, 109);
+  color: #125768e3;
+  border-radius: 8px;
+  padding:  30px;
+}
+.heading {
+  text-align: center;
+  font-size: 26px;
+  color: #222a72;
+}
+
+.inputboxcontainer {
+  position: relative;
+  height: 40px;
+  margin: 30px 0;
+}
+.inputbox {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 20px 45px 20px 20px;
+}
+.inputbox::placeholder {
+  color: #636262;
+}
+.inputboxcontainer .icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+.wrapper button {
+  width: 100%;
+  height: 45px;
+  background: #1649a849;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #333;
+  font-weight: 500;
+}
+
+.wrapper button:hover  {
+  color: #ecf2fc;
+  background: #496fb6;
+}
+
+
+.registerlink {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}

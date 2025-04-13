@@ -27,6 +27,8 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 npm i modern-normalize
 
+npm i lazy
+
 npm i clsx
 
 react-router-dom

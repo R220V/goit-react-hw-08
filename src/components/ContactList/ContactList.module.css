@@ -1,14 +1,14 @@
-.list{
+  .item{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 6px;
+  }
+.divitem{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	padding: 10px;
-	
+	align-items: center;
+	max-width: 1200px;
+	margin: 10px;
 }
-
-  .item{
-	display: flex;
-	flex-direction: column;
-	max-width: 400px;
-	margin: 5px;
-  }

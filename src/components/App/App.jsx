@@ -1,42 +1,45 @@
+import { lazy, Suspense, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import Layout from "../Layout/Layout";
 import { useDispatch, useSelector } from "react-redux";
-import {fetchContacts} from "../../redux/contactsOps"
-import { selectContacts, selectLoading, selectError } from "../../redux/contactsSlice";
+import { refreshUser } from "../../redux/auth/operations";
+import { selectIsRefreshing } from "../../redux/auth/selectors";
+import RestrictedRoute from "../RestrictedRoute";
+import PrivateRoute from "../PrivateRoute";
+import css from './App.module.css'
 
-import ContactList from "../ContactList/ContactList";
-import SearchBox from "../SearchBox/SearchBox";
-import ContactForm from "../ContactForm/ContactForm";
-
-import css from './App.module.css';
-import { useEffect } from "react";
-
-
+const HomePage = lazy(() => import("../Pages/HomePage"));
+const RegistrationPage = lazy(() =>
+  import("../Pages/RegistrationPage")
+);
+const LoginPage = lazy(() => import("../Pages/LoginPage"));
+const ContactsPage = lazy(() => import("../Pages/ContactsPage"));
 
 export default function App() {
-	const dispatch = useDispatch()
-	const contacts = useSelector(selectContacts);
-	const isLoading = useSelector(selectLoading)
-	const isError = useSelector(selectError)
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
-	useEffect(()=>{
-		dispatch(fetchContacts())
-	},[dispatch])
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+  return isRefreshing ? (
+    <strong>Loading...</strong>
+  ) : (
+<Layout>
+    <Suspense fallback={<div>Завантаження сторінки...</div>}>
+		<Routes>
 
-	//   console.log('Contacts:', contacts);
+        	<Route path="/" element={<HomePage />} />
 
-	  return (
-		<div className={css.container}>
-		  <h2>Phonebook</h2>
-		  <ContactForm />
-		  <SearchBox />
-	  
-		  {isError && <p className={css.error}>Error, plz reload page...</p>}
-		  {isLoading && <p className={css.text}>Loading...</p>}
-	  
-		  {!isLoading && !isError && contacts.length === 0 && (
-			<p className={css.empty}>There are no contacts</p>
-		  )}
-	  
-		  {!isLoading && !isError && contacts.length > 0 && <ContactList />}
-		</div>
-	  );
-	 }
+        	<Route 	path="/register"   	element={<RestrictedRoute           component={<RegistrationPage />}redirectTo="/contacts" /> } />
+        
+			<Route path="/login" element={<RestrictedRoute           component={<LoginPage />} redirectTo="/contacts" />}/>
+          
+		  	<Route path="/contacts" element={<PrivateRoute component={<ContactsPage />} redirectTo="/login" />} />
+
+    	</Routes>
+    </Suspense>
+</Layout>
+  );
+}
+
